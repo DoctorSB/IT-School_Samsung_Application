@@ -70,6 +70,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 String email = reg_email.getText().toString();
                 String password = reg_pass.getText().toString();
                 String cPassword = reg_cPass.getText().toString();
+                String status = "Привет, я пользуюсь Notice!";
 
 
                 if(TextUtils.isEmpty(name) || TextUtils.isEmpty(email) ||
@@ -108,7 +109,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                                     @Override
                                                     public void onSuccess(Uri uri) {
                                                        imageURI = uri.toString();
-                                                       Users users = new Users(auth.getUid(),name,email,imageURI);
+                                                       Users users = new Users(auth.getUid(),name,email,imageURI,status);
                                                        reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                            @Override
                                                            public void onComplete(@NonNull Task<Void> task) {
@@ -127,8 +128,9 @@ public class RegistrationActivity extends AppCompatActivity {
                                         }
                                     });
                                 }else {
+                                    String status = "Привет, я пользуюсь Notice!";
                                     imageURI = "https://firebasestorage.googleapis.com/v0/b/notice-c8706.appspot.com/o/profile_image.png?alt=media&token=97d4c8de-fe77-4caa-96ff-820e7a0295d8";
-                                    Users users = new Users(auth.getUid(),name,email,imageURI);
+                                    Users users = new Users(auth.getUid(),name,email,imageURI,status);
                                     reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {

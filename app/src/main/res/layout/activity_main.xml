@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_margin="@dimen/_10sdp"
-            android:text="Все заадчи будут выполнены."
+            android:text="Все задачи будут выполнены."
             android:textColor="@color/text_color"
             android:textSize="@dimen/_14sdp">
 
