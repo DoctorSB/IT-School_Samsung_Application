@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -25,6 +28,7 @@ public class HomeActivity extends AppCompatActivity {
     UserAdapter adapter;
     FirebaseDatabase database;
     ArrayList<Users> usersArrayList;
+    ImageView imgLogout;
 
 
     @Override
@@ -57,10 +61,22 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        imgLogout = findViewById(R.id.img_logOut);
         mainUserRecyclerView = findViewById(R.id.mainUserRecyclerView);
         mainUserRecyclerView.setLayoutManager( new LinearLayoutManager(this));
         adapter = new UserAdapter(HomeActivity.this,usersArrayList);
         mainUserRecyclerView.setAdapter(adapter);
+
+        imgLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new Dialog(HomeActivity.this,R.style.Dialoge);
+
+                dialog.setContentView(R.layout.dialog_layout);
+
+                dialog.show();
+            }
+        });
 
 
         if(auth.getCurrentUser() == null)
