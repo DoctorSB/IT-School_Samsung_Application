@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".HomeActivity"
+    android:background="@color/notice_back">
     <LinearLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
-        android:background="@color/notice_blue"
+        android:background="@color/notice_back"
         android:gravity="right"
         android:orientation="horizontal">
 
@@ -32,7 +33,8 @@
             android:layout_height="@dimen/_20sdp"
             android:background="@drawable/off"
             android:layout_gravity="center"
-            android:layout_marginRight="@dimen/_10sdp"/>
+            android:layout_marginRight="@dimen/_10sdp"
+            android:backgroundTint="@color/notice_blue"/>
 
     </LinearLayout>
 

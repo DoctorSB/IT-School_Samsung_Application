@@ -6,6 +6,7 @@
     android:layout_margin="@dimen/_10sdp"
     android:background="@drawable/shape_dialog"
     android:gravity="center"
+    android:backgroundTint="@color/notice_back"
     android:orientation="vertical"
     android:layout_gravity="center">
 
@@ -22,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
         android:gravity="center"
+        android:textColor="@color/grey_text"
         android:text="Вы уверены что хотите выйти?"
         android:textSize="@dimen/_15sdp"
 
