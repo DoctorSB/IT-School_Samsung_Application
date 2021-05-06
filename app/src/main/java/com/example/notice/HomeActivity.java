@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -73,6 +74,25 @@ public class HomeActivity extends AppCompatActivity {
                 Dialog dialog = new Dialog(HomeActivity.this,R.style.Dialoge);
 
                 dialog.setContentView(R.layout.dialog_layout);
+
+                TextView yesBtn,noBtn;
+
+                yesBtn = dialog.findViewById(R.id.yesBtn);
+                noBtn = dialog.findViewById(R.id.noBtn);
+
+                yesBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(HomeActivity.this,LoginActivity.class));
+                    }
+                });
+                noBtn.setOnClickListener((new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                }));
 
                 dialog.show();
             }

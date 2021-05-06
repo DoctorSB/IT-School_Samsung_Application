@@ -1,6 +1,7 @@
 package com.example.notice;
 
 import android.content.Context;
+import android.content.Intent;
 import android.icu.lang.UScript;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,6 +40,18 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder> {
         holder.user_name.setText(users.name);
         holder.user_status.setText(users.status);
         Picasso.get().load(users.imageUri).into(holder.user_profile);
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(homeActivity,ChatActivity.class);
+                intent.putExtra("name",users.getName());
+                intent.putExtra("ReciverImage",users.getImageUri());
+                intent.putExtra("uid",users.getUid());
+                homeActivity.startActivity(intent);
+            }
+        });
 
     }
 
