@@ -1,4 +1,4 @@
-package com.example.notice;
+package com.example.notice.ModelClass;
 
 public class Users {
     String uid;

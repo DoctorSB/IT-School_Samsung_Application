@@ -1,4 +1,4 @@
-package com.example.notice;
+package com.example.notice.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.notice.R;
+import com.example.notice.Adapter.UserAdapter;
+import com.example.notice.ModelClass.Users;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

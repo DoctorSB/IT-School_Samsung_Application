@@ -1,8 +1,7 @@
-package com.example.notice;
+package com.example.notice.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.icu.lang.UScript;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.notice.Activity.ChatActivity;
+import com.example.notice.Activity.HomeActivity;
+import com.example.notice.ModelClass.Users;
+import com.example.notice.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -45,7 +48,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(homeActivity,ChatActivity.class);
+                Intent intent = new Intent(homeActivity, ChatActivity.class);
                 intent.putExtra("name",users.getName());
                 intent.putExtra("ReciverImage",users.getImageUri());
                 intent.putExtra("uid",users.getUid());
