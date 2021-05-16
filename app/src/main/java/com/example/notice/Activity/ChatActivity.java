@@ -3,14 +3,18 @@ package com.example.notice.Activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.notice.Adapter.MessagesAdater;
 import com.example.notice.ModelClass.Messages;
 import com.example.notice.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,6 +50,8 @@ public class ChatActivity extends AppCompatActivity {
     RecyclerView messageAdater;
     ArrayList<Messages> messagesArrayList;
 
+    MessagesAdater adater;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +70,11 @@ public class ChatActivity extends AppCompatActivity {
         reciverName = findViewById(R.id.reciverName);
 
         messageAdater = findViewById(R.id.messageAdater);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setStackFromEnd(true);
+        messageAdater.setLayoutManager(linearLayoutManager);
+        adater = new MessagesAdater(ChatActivity.this,messagesArrayList);
+        messageAdater.setAdapter(adater);
 
         sendBtn = findViewById(R.id.sendBtn);
         edtMessage = findViewById(R.id.edtMessage);
@@ -91,6 +102,7 @@ public class ChatActivity extends AppCompatActivity {
                     messagesArrayList.add(messages);
 
                 }
+                adater.notifyDataSetChanged();
 
             }
 
