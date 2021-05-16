@@ -11,4 +11,6 @@
     <color name="text_color">#c4c6c9</color>
     <color name="grey_text">#8b8a8b</color>
     <color name="notice_blue">#53a5f8</color>
+    <color name="message_blue">#51a2f2</color>
+    <color name="message_dark">#1a222c</color>
 </resources>
