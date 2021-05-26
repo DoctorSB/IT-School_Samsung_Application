@@ -14,6 +14,7 @@ import com.example.notice.Activity.ChatActivity;
 import com.example.notice.Activity.HomeActivity;
 import com.example.notice.ModelClass.Users;
 import com.example.notice.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -39,6 +40,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Viewholder> {
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         Users users = usersArrayList.get(position);
+
+        if (FirebaseAuth.getInstance().getCurrentUser().getUid().equals(users.getUid()))
+        {
+            holder.itemView.setVisibility(View.GONE);
+        }
 
         holder.user_name.setText(users.name);
         holder.user_status.setText(users.status);

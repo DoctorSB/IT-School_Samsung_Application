@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.ChatActivity"
-    android:background="@color/notice_back">
+    android:background="@color/notice_back"
+    tools:context=".Activity.ChatActivity">
 
     <LinearLayout
         android:id="@+id/ll1"
@@ -42,8 +42,8 @@
         android:id="@+id/messageAdater"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ll1"
-        android:layout_above="@id/ll3"/>
+        android:layout_above="@id/ll3"
+        android:layout_below="@id/ll1" />
 
     <LinearLayout
         android:id="@+id/ll3"
@@ -59,7 +59,7 @@
             android:layout_height="@dimen/_35sdp"
             android:layout_margin="@dimen/_3sdp"
             android:layout_weight="1"
-            app:cardBackgroundColor="#131922"
+            app:cardBackgroundColor="@color/message_dark"
             app:cardCornerRadius="@dimen/_540sdp">
 
             <EditText
@@ -72,24 +72,20 @@
                 android:paddingLeft="@dimen/_15sdp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey_text" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sendBtn"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_margin="@dimen/_3sdp"
+                app:cardBackgroundColor="@color/notice_blue"
+                app:cardCornerRadius="@dimen/_540sdp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/sendbtn" />
+            </androidx.cardview.widget.CardView>
 
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/sendBtn"
-            android:layout_width="@dimen/_35sdp"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_margin="@dimen/_3sdp"
-            app:cardBackgroundColor="@color/notice_blue"
-            app:cardCornerRadius="@dimen/_540sdp">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/sendbtn"/>
-
-
-        </androidx.cardview.widget.CardView>
     </LinearLayout>
 </RelativeLayout>
