@@ -16,7 +16,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/_10sdp"
         android:src="@drawable/off"
-        app:tint="@color/black" />
+        app:tint="@color/notice_blue"
+         />
 
     <TextView
         android:layout_width="match_parent"

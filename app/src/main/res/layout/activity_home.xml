@@ -28,6 +28,15 @@
             android:layout_marginLeft="@dimen/_10sdp" />
 
         <ImageView
+            android:id="@+id/img_Setting"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="@drawable/settingbtn"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:backgroundTint="@color/notice_blue"/>
+
+        <ImageView
             android:id="@+id/img_logOut"
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
@@ -35,6 +44,7 @@
             android:layout_gravity="center"
             android:layout_marginRight="@dimen/_10sdp"
             android:backgroundTint="@color/notice_blue"/>
+
 
     </LinearLayout>
 
@@ -44,9 +54,6 @@
         android:id="@+id/mainUserRecyclerView"
         android:layout_below="@+id/toolbar"
         android:layout_marginTop="@dimen/_5sdp"
-
-
-
         />
 
 </RelativeLayout>
